@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+<strong>Micropost:</strong>
+<table style="border: 1px solid black;border-collapse: collapse;">
+<% @microposts.each do |micropost| %>
+  <tr style="border: 1px solid black;"><td><%= micropost.content %></td>
+  <td style="border: 1px solid black;"><%= link_to 'Edit', edit_micropost_path(micropost.id) %></td></tr>
+<% end %>
+
+</table>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
